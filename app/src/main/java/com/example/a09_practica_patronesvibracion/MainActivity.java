@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
+// prueba con bóton
 import android.widget.Button;
+//cambio a imagen
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,20 +37,20 @@ public class MainActivity extends AppCompatActivity {
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         // Dos botones de prueba
-        Button buttonCorto = findViewById(R.id.buttonCorto);
-        Button buttonLargo = findViewById(R.id.buttonLargo);
+        ImageView imageSinSonido = findViewById(R.id.imageSinSonido);
+        ImageView imageBee = findViewById(R.id.imageBee);
 
 
         /**
          * Para vibración fija y variable en el tiempo
          */
-        buttonCorto.setOnClickListener(new View.OnClickListener() {
+        imageSinSonido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Vibración en milisegundos
 
                 //Por ejemplo 1000 milisegundos es 1 segundo
-                vibrator.vibrate(1000);
+                vibrator.vibrate(500);
             }
         });
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Variando Intensidad y tiempo fijo y variable
          */
-        buttonLargo.setOnClickListener(new View.OnClickListener() {
+        imageBee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -66,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 
                 {
-                    long[] time = {0, 100, 0, 100, 0, 100};
-                    int[] amplitude = {0, 50, 0, 100, 0, 150};
+                    long[] time = {0, 150, 0, 200, 0, 150, 0, 100};
+                    int[] amplitude = {0, 50, 0, 100, 0, 150, 0, 100};
 
                     VibrationEffect vibrationEffect = VibrationEffect.createWaveform(time, amplitude, -1 /*-1 No repeat*/);
 
