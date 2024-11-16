@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // Dos botones de prueba
         Button buttonCorto = findViewById(R.id.buttonCorto);
         Button buttonLargo = findViewById(R.id.buttonLargo);
 
